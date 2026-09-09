@@ -1,0 +1,76 @@
+{
+  "name": "toyhouse-oauth",
+  "version": "1.0.0",
+  "description": "Librería dual de OAuth2 para Toyhou.se (soporta Passport.js y cliente Vanilla Promise-based con TypeScript nativo)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/**/*.test.js",
+    "demo": "node examples/server.js",
+    "demo:mock": "MOCK_TOYHOUSE=true node examples/server.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MDCYT/toyhouse-oauth.git"
+  },
+  "keywords": [
+    "toyhouse",
+    "toyhou.se",
+    "oauth",
+    "oauth2",
+    "passport",
+    "passport-strategy",
+    "authentication",
+    "auth",
+    "login",
+    "typescript"
+  ],
+  "author": "MDC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MDCYT/toyhouse-oauth/issues"
+  },
+  "homepage": "https://github.com/MDCYT/toyhouse-oauth#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "passport-oauth2": "^1.8.0"
+  },
+  "peerDependenciesMeta": {
+    "passport-oauth2": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "@types/passport-oauth2": "^1.8.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "passport": "^0.7.0",
+    "passport-oauth2": "^1.8.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.8.3"
+  }
+}
