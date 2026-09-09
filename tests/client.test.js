@@ -4,9 +4,9 @@ const { ToyhouseOAuth, DEFAULT_ENDPOINTS } = require('../dist');
 
 describe('ToyhouseOAuth (Vanilla Client)', () => {
     test('debe fallar si faltan parámetros obligatorios en el constructor', () => {
-        assert.throws(() => new ToyhouseOAuth({}), /son obligatorios/);
-        assert.throws(() => new ToyhouseOAuth({ clientId: 'id' }), /son obligatorios/);
-        assert.throws(() => new ToyhouseOAuth({ clientId: 'id', clientSecret: 'sec' }), /son obligatorios/);
+        assert.throws(() => new ToyhouseOAuth({}), /are required/);
+        assert.throws(() => new ToyhouseOAuth({ clientId: 'id' }), /are required/);
+        assert.throws(() => new ToyhouseOAuth({ clientId: 'id', clientSecret: 'sec' }), /are required/);
     });
 
     test('debe inicializarse correctamente con nombres canónicos y alias', () => {

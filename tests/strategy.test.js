@@ -8,7 +8,7 @@ describe('ToyhouseStrategy (Passport.js)', () => {
             clientID: 'client_123',
             clientSecret: 'secret_123',
             callbackURL: 'http://localhost:3000/auth/toyhouse/callback'
-        }, () => {});
+        }, () => { });
 
         assert.strictEqual(strategy.name, 'toyhouse');
         assert.strictEqual(strategy._userProfileURL, DEFAULT_ENDPOINTS.userProfileURL);
@@ -19,7 +19,7 @@ describe('ToyhouseStrategy (Passport.js)', () => {
             clientId: 'client_abc',
             clientSecret: 'secret_abc',
             redirectUri: 'http://localhost:3000/callback'
-        }, () => {});
+        }, () => { });
 
         assert.strictEqual(strategy._oauth2._clientId, 'client_abc');
         assert.strictEqual(strategy._oauth2._clientSecret, 'secret_abc');
@@ -50,7 +50,7 @@ describe('ToyhouseStrategy (Passport.js)', () => {
             clientSecret: 'sec',
             callbackURL: 'http://localhost/cb',
             fetch: mockFetch
-        }, () => {});
+        }, () => { });
 
         strategy.userProfile('valid_token', (err, profile) => {
             assert.ifError(err);
@@ -77,11 +77,11 @@ describe('ToyhouseStrategy (Passport.js)', () => {
             clientSecret: 'sec',
             callbackURL: 'http://localhost/cb',
             fetch: mockFetch
-        }, () => {});
+        }, () => { });
 
         strategy.userProfile('bad_token', (err, profile) => {
             assert(err);
-            assert.match(err.message, /Fallo al obtener el perfil de usuario de Toyhou\.se/);
+            assert.match(err.message, /Failed to get user profile from Toyhou\.se/);
             assert.strictEqual(profile, undefined);
             done();
         });
@@ -99,11 +99,11 @@ describe('ToyhouseStrategy (Passport.js)', () => {
             clientSecret: 'sec',
             callbackURL: 'http://localhost/cb',
             fetch: mockFetch
-        }, () => {});
+        }, () => { });
 
         strategy.userProfile('token', (err, profile) => {
             assert(err);
-            assert.match(err.message, /no es un JSON/i);
+            assert.match(err.message, /Invalid JSON response from Toyhou.se/);
             done();
         });
     });
