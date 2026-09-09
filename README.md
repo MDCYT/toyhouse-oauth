@@ -10,7 +10,7 @@ ToyHou.se OAuth2 Library for Node.js
 
 ## Features
 
-- **Soporte Dual**: If you use passport you can use `ToyhouseStrategy`, else you can make you own autentication flow using `ToyhouseOAuth` class.
+- **Dual Support**: If you use passport you can use `ToyhouseStrategy`, else you can make you own autentication flow using `ToyhouseOAuth` class.
 - **TypeScript Support**: Full TypeScript support with type definitions.
 - **Official Endpoints**: Configured with Toyhou.se official endpoints (`~oauth/authorize`, `~oauth/token`, `~api/v1/me`).
 - **Flexible Aliases**: Accepts `clientId` / `clientID` and `redirectUri` / `callbackURL`.

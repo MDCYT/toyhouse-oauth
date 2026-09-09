@@ -1,6 +1,6 @@
 {
   "name": "toyhouse-oauth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Librería dual de OAuth2 para Toyhou.se (soporta Passport.js y cliente Vanilla Promise-based con TypeScript nativo)",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
